@@ -1,4 +1,4 @@
-# SmileyPop_xiaohu
+# Pop Smileys 打爆笑脸 (by Xiaohu)
 
 ## Requirements:
 python >= 3.6
