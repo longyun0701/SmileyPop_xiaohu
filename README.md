@@ -1,7 +1,7 @@
 # Pop Smileys 打爆笑脸 (by Xiaohu)
 
 ## Requirements:
-python >= 3.6
+python >= 3.6  
 pygame >= 1.9.2
 
 ## How to play: (Xiaohu writes)
