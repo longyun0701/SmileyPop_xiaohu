@@ -110,6 +110,9 @@ def easy():
             screen.fill(BLACK)
         elif(_c>0):
             screen.fill(YEL)
+            draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+"%"+"  Lv.2 will start in "
+            draw_string+=str(7-int(count/60))
+            draw_string+=" seconds."
         else:
             screen.fill(RED)
         sprite_list.update()
@@ -148,7 +151,7 @@ def easy():
                 win.play()
                 draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+("%")
                 _c+=1
-                draw_string+="  Prepare for Lv.2 to start"
+                
             if ((count_smileys>=dienum)&((true_pop*100/count_smileys)<35)&(_c==0)):
                 sprite_list = pygame.sprite.Group() # lose
                 over.play()
@@ -407,6 +410,9 @@ def n():
             screen.fill(BLACK)
         elif(_c>1):
             screen.fill(YEL)
+            draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+"%"+"  Lv.2 will start in "
+            draw_string+=str(int(8-count/60))
+            draw_string+=" seconds."
         else:
             screen.fill(RED)
         sprite_list.update()
@@ -443,9 +449,9 @@ def n():
                 
                 sprite_list = pygame.sprite.Group() #win
                 win.play()
-                draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+("%")
+                draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+"%"
                 _c+=1
-                draw_string+="  Prepare for Lv.3 to start"
+                
             if ((count_smileys>=dienum)&((true_pop*100/count_smileys)<45)&(_c==1)):
                 sprite_list = pygame.sprite.Group() # lose
                 over.play()
