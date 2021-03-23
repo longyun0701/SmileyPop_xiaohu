@@ -25,6 +25,7 @@ def easy():
     pop = pygame.mixer.Sound("hit.wav")
     win=pygame.mixer.Sound('win.wav')
     over=pygame.mixer.Sound('over.wav')
+    pl=pygame.mixer.Sound('pl.wav')
     font = pygame.font.SysFont("Arial", 24)
     count_smileys = 0
     count_popped = 0
@@ -108,6 +109,7 @@ def easy():
         
         if _c==0:
             screen.fill(BLACK)
+            pl.play()
         elif(_c>0):
             screen.fill(YEL)
             draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+"%"+"  Lv.2 will start in "
@@ -142,17 +144,18 @@ def easy():
             newSmiley = Smiley(pygame.mouse.get_pos(), speedx, speedy)
             sprite_list.add(newSmiley)
             count_smileys += 1
-        if (count>=450):
+        if (count>=450)&(_c>0):
             n()
         if count_smileys>0:
             if (count_smileys>=50)&((true_pop*100/count_smileys)>75)&(_c==0):
-                
+                pl.stop() 
                 sprite_list = pygame.sprite.Group() #win
                 win.play()
                 draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+("%")
                 _c+=1
                 
             if ((count_smileys>=dienum)&((true_pop*100/count_smileys)<35)&(_c==0)):
+                pl.stop()
                 sprite_list = pygame.sprite.Group() # lose
                 over.play()
                 draw_string="You lose, "
@@ -178,6 +181,7 @@ def h():
     pop = pygame.mixer.Sound("hit.wav")
     win=pygame.mixer.Sound('win.wav')
     over=pygame.mixer.Sound('over.wav')
+    pl=pygame.mixer.Sound('pl.wav')
     font = pygame.font.SysFont("Arial", 24)
     count_smileys = 0
     count_popped = 0
@@ -261,6 +265,7 @@ def h():
         
         if _c==2:
             screen.fill(BLACK)
+            pl.play()
         elif(_c>2):
             screen.fill(YEL)
         else:
@@ -294,16 +299,17 @@ def h():
             count_smileys += 1
         if count_smileys>0:
             if (count_smileys>=100)&((true_pop*100/count_smileys)>90)&(_c==2):
-                
+                pl.stop()
                 sprite_list = pygame.sprite.Group() #win
                 win.play()
                 draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+("%")
                 _c+=1
             if ((count_smileys>=dienum)&((true_pop*100/count_smileys)<55)&(_c==2)):
+                pl.stop()
                 sprite_list = pygame.sprite.Group() # lose
                 over.play()
                 draw_string="You lose, "
-                if ((count_popped*100/count_smileys)>52):
+                if ((count_popped*100/count_smileys)>60):
                     draw_string+="because you have cheated."
                 else:
                     draw_string="You lose!!! In "+str(count_smileys)+" bubbles,you have only popped "+str(count_popped)+" bubbles."
@@ -325,6 +331,7 @@ def n():
     pop = pygame.mixer.Sound("hit.wav")
     win=pygame.mixer.Sound('win.wav')
     over=pygame.mixer.Sound('over.wav')
+    pl=pygame.mixer.Sound('pl2.wav')
     font = pygame.font.SysFont("Arial", 24)
     count_smileys = 0
     count_popped = 0
@@ -408,6 +415,7 @@ def n():
         
         if _c==1:
             screen.fill(BLACK)
+            pl.play()
         elif(_c>1):
             screen.fill(YEL)
             draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+"%"+"  Lv.2 will start in "
@@ -442,17 +450,18 @@ def n():
             newSmiley = Smiley(pygame.mouse.get_pos(), speedx, speedy)
             sprite_list.add(newSmiley)
             count_smileys += 1
-        if (count>=460):
+        if (count>=460)&(_c>1):
             h()
         if count_smileys>0:
             if (count_smileys>=80)&((true_pop*100/count_smileys)>85)&(_c==1):
-                
+                pl.stop()
                 sprite_list = pygame.sprite.Group() #win
                 win.play()
                 draw_string="YOU WIN!!!!!!!!!! Percent:"+str( round(true_pop*100/count_smileys, 1))+"%"
                 _c+=1
                 
             if ((count_smileys>=dienum)&((true_pop*100/count_smileys)<45)&(_c==1)):
+                pl.stop()
                 sprite_list = pygame.sprite.Group() # lose
                 over.play()
                 draw_string="You lose, "
