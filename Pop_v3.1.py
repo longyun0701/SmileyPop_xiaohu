@@ -36,6 +36,10 @@ def easy():
     true_pop=0
     restart=0
     dienum=random.randint(15,35)
+    xx=(random.randint(1,1020))
+    yy=(random.randint(1,765))
+    
+
     class Smiley(pygame.sprite.Sprite):
         pos = (0,0)
         xvel = 1
@@ -117,6 +121,7 @@ def easy():
             draw_string+=" seconds."
         else:
             screen.fill(RED)
+        pygame.draw.rect(screen,RED,(xx,yy,10,10))
         sprite_list.update()
         sprite_list.draw(screen)
         clock.tick(60)
@@ -164,6 +169,16 @@ def easy():
                 else:
                     draw_string="You lose!!! In "+str(count_smileys)+" bubbles,you have only popped "+str(count_popped)+" bubbles."
                 _c-=1
+            if [s for s in sprite_list if s.rect.collidepoint(xx,yy)]:
+                pl.stop()
+                sprite_list = pygame.sprite.Group() # lose
+                over.play()
+                draw_string="You lose,because you hit the bomb."
+                _c-=1
+
+
+
+
 def h():
     
     screen = pygame.display.set_mode([1024, 768])
@@ -192,6 +207,10 @@ def h():
     true_pop=0
     restart=0
     dienum=random.randint(10,30)
+    xx=(random.randint(1,1020))
+    yy=(random.randint(1,765))
+  
+
     class Smiley(pygame.sprite.Sprite):
         pos = (0,0)
         xvel = 1
@@ -270,6 +289,7 @@ def h():
             screen.fill(YEL)
         else:
             screen.fill(RED)
+        pygame.draw.rect(screen,RED,(xx,yy,10,10))
         sprite_list.update()
         sprite_list.draw(screen)
         clock.tick(60)
@@ -314,6 +334,16 @@ def h():
                 else:
                     draw_string="You lose!!! In "+str(count_smileys)+" bubbles,you have only popped "+str(count_popped)+" bubbles."
                 _c-=1
+            if [s for s in sprite_list if s.rect.collidepoint(xx,yy)]:
+                pl.stop()
+                sprite_list = pygame.sprite.Group() # lose
+                over.play()
+                draw_string="You lose,because you hit the bomb."
+                _c-=1
+
+
+
+
 def n():
     
     screen = pygame.display.set_mode([1024, 768])
@@ -342,6 +372,9 @@ def n():
     true_pop=0
     restart=0
     dienum=random.randint(10,35)
+    xx=(random.randint(1,1020))
+    yy=(random.randint(1,765))
+ 
     class Smiley(pygame.sprite.Sprite):
         pos = (0,0)
         xvel = 1
@@ -423,9 +456,11 @@ def n():
             draw_string+=" seconds."
         else:
             screen.fill(RED)
+        pygame.draw.rect(screen,RED,(xx,yy,10,10))
         sprite_list.update()
         sprite_list.draw(screen)
         clock.tick(60)
+        
         if _c==1:
             draw_string = "(lv.2)Bubbles created: " + str(count_smileys)
             draw_string += " - Bubbles popped: " + str(int(count_popped))
@@ -470,6 +505,13 @@ def n():
                 else:
                     draw_string="You lose!!! In "+str(count_smileys)+" bubbles,you have only popped "+str(count_popped)+" bubbles."
                 _c-=1
+            if [s for s in sprite_list if s.rect.collidepoint(xx,yy)]:
+                pl.stop()
+                sprite_list = pygame.sprite.Group() # lose
+                over.play()
+                draw_string="You lose,because you hit the bomb."
+                _c-=1
+                
 
 
 
