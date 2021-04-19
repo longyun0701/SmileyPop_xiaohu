@@ -1,4 +1,4 @@
-# Pop Smileys 打爆笑脸 (by Xiaohu)
+# Pop Smileys 打爆笑脸 外一则 (by Xiaohu)
 
 ## Requirements:
 python >= 3.6  
@@ -37,3 +37,7 @@ HowToPlay:
 >5.If you win, wait 6-7 seconds for the start of the next level.  
 
 P.S.: Could you teach me how to shorten my code?(Pop_v3.1)?  
+
+# 随机的乐趣 (Knife_energy_bomb.cpp)  
+
+类似石头剪刀布的随机游戏, 跟电脑对战.
